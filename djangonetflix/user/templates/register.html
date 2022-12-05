@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+<title>Netflix Kayıt Ol</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <form action="" method="POST" class="w-50 m-auto border p-5 mt-5 text-light" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <h2 class="text-center">Kayıt Ol</h2>
+            <label for="">Kullanıcı Adı</label>
+            <input type="text" name="username" class="form-control">
+            <label for="">E-Mail</label>
+            <input type="email" name="email" class="form-control">
+            <label for="">Profil Resmi</label>
+            <input type="file" name="resim" class="form-control">
+            <label for="">Doğum Tarihi</label>
+            <input type="date" name="date" class="form-control">
+            <label for="">T.C. Kimlik no</label>
+            <input type="number" name="tc" maxlength="11" class="form-control">
+            <label for="">Telefon numaranız</label>
+            <input type="number" name="tel" maxlength="11" class="form-control">
+            <label for="">Şifre</label>
+            <input type="password" name="password1" class="form-control">
+            <label for="">Şifre Tekrar</label>
+            <input type="password" name="password2" class="form-control">
+            <input type="submit" value="Kayıt Ol" class="btn btn-primary mt-2">
+        </form>
+    </div>
+
+
+{% endblock content %}
